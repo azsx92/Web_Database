@@ -21,6 +21,16 @@ public class ConnectTests {
     }
 
     @Test
+    public void testConnection2() throws Exception {
+        Class.forName("org.mariadb.jdbc.Driver");
+
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/root","root","1234");
+//        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/root","root","1234");
+        Assertions.assertNotNull(connection);
+        connection.close();
+    }
+
+    @Test
     public void testHikariCP() throws Exception {
         HikariConfig config = new HikariConfig();
         config.setDriverClassName("com.mysql.cj.jdbc.Driver");
