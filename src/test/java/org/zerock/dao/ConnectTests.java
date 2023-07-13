@@ -14,7 +14,7 @@ public class ConnectTests {
     public void testConnection() throws Exception {
         Class.forName("com.mysql.cj.jdbc.Driver");
 
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ljdbc_db","jdbc_db","1234");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_db","jdbc_db","1234");
 //        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/root","root","1234");
         Assertions.assertNotNull(connection);
         connection.close();
